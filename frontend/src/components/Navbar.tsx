@@ -123,7 +123,7 @@ const Navbar: React.FC = () => {
         <Link href="/">Solmatch</Link>
       </div>
       <div className="flex space-x-2">
-        {account && !session ? (
+        {account ? ( // removed && !session
           <div className="relative">
             <Button variant="outline" onClick={toggleDropdown}>
               Connected: {account.substring(0, 5)}...
@@ -151,7 +151,7 @@ const Navbar: React.FC = () => {
             </Button>
           )
         )}
-        {session ? (
+        {session ? ( // can delete or augment this since it is not needed anymore -> no charity login
           <div className="flex items-center gap-2">
             <Button onClick={handleNavigateToCreateCampaign}>
               Create a Campaign
