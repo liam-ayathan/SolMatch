@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@rainbow-me/rainbowkit": "^1.1.1",
+    "@solana/wallet-adapter-react": "^0.15.35",
     "class-variance-authority": "^0.7.0",
     "dotenv": "^16.3.1",
     "ethers": "^6.7.1",
@@ -21,6 +23,8 @@
     "react-dom": "^18",
     "react-icons": "^4.11.0",
     "tailwind-merge": "^1.14.0",
+    "viem": "^1.16.5",
+    "wagmi": "^1.4.3",
     "web3": "^4.1.2"
   },
   "devDependencies": {
