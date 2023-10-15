@@ -23,56 +23,7 @@ const CampaignProgressSection: React.FC<CamPaignProgressSectionProps> = ({
   const [donationAmount, setDonationAmount] = useState<number>(0);
   const { data: session } = useSession();
   const submitDefaultTransaction = async () => {
-    try {
-      const web3 = new Web3(window.ethereum);
-      if (window.ethereum) {
-        await window.ethereum.request({ method: "eth_requestAccounts" });
-
-        // Get the user's Ethereum account
-        const accounts = await web3.eth.getAccounts();
-        const senderAddress = accounts[0];
-        console.log("Sender Address:", senderAddress);
-
-        // Recipient's address (null address)
-        const response = await fetch("/api/donate?id=5XUCEe0GNc1rxTNAtNCP");
-        const recipientAddress = await response.json();
-        console.log("Recipient Address:", recipientAddress);
-
-        // Convert donationAmount to Wei
-        const amountInWei = web3.utils.toWei(
-          donationAmount.toString(),
-          "ether"
-        );
-
-        const senderBalance = await web3.eth.getBalance(senderAddress);
-        const balanceInWei = web3.utils.fromWei(senderBalance, "ether");
-        console.log("Sender's Balance: ", balanceInWei);
-
-        const networkId = await web3.eth.getChainId();
-        console.log("Chain ID: ", networkId);
-
-        const gasLimit = 100000;
-
-        // Create a transaction object
-        const transactionObject = {
-          from: senderAddress,
-          to: recipientAddress,
-          value: amountInWei,
-          chainId: 80001,
-          gas: gasLimit,
-        };
-
-        console.log("Transaction Object:", transactionObject);
-
-        // Sign and send the transaction
-        const txReceipt = await web3.eth.sendTransaction(transactionObject);
-        console.log("Transaction Hash:", txReceipt.transactionHash);
-      } else {
-        console.error("Ethereum provider (MetaMask) not found.");
-      }
-    } catch (error) {
-      console.error("Error sending transaction:", error);
-    }
+    console.log("Done!");
   };
 
   return (
