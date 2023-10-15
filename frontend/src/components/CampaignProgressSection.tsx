@@ -5,7 +5,7 @@ import { Button } from "./ui/button";
 import Web3 from "web3";
 import { useSession, signIn, signOut } from "next-auth/react";
 
-interface CharityProgressSectionProps {
+interface CamPaignProgressSectionProps {
   progressValue: number;
   currentAmount: number;
   targetAmount: number;
@@ -13,7 +13,7 @@ interface CharityProgressSectionProps {
   charity: string;
 }
 
-const CharityProgressSection: React.FC<CharityProgressSectionProps> = ({
+const CampaignProgressSection: React.FC<CamPaignProgressSectionProps> = ({
   progressValue,
   currentAmount,
   targetAmount,
@@ -108,4 +108,4 @@ const CharityProgressSection: React.FC<CharityProgressSectionProps> = ({
   );
 };
 
-export default CharityProgressSection;
+export default CampaignProgressSection;

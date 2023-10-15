@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { NextApiRequest, NextApiResponse } from "next";
-import firebaseApp from "../../../firebaseConfig"
+import firebaseApp from "../../../firebaseConfig.js";
 import {
   collection,
   getDocs,

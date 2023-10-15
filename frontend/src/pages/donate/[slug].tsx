@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 import Layout from "@/components/Layout";
 import RecentDonationsSection from "@/components/RecentDonationsSection";
 import CommitmentsSection from "@/components/CommitmentsSection";
-import CharityProgressSection from "@/components/CharityProgressSection";
+import CampaignProgressSection from "@/components/CampaignProgressSection";
 import { DocumentReference, Timestamp } from "@firebase/firestore-types";
 import { Campaign, Commitment } from "@/types/charities";
 import { campaignsStub } from "@/stubs/campaignCard";
@@ -59,14 +59,20 @@ const CampaignPage: React.FC<CampaignProps> = ({ campaign }) => {
       </div>
 
       <div className="w-1/3 p-6 mt-8">
-        <CharityProgressSection
+        <CampaignProgressSection
           progressValue={progressValue}
           currentAmount={campaign.currentAmount}
           targetAmount={campaign.targetAmount}
           daysRemaining={daysRemaining}
           charity={campaign.charity}
         />
-        <RecentDonationsSection donations={[{"donor":"0x..111", "time":"5 Hours Ago", "amount":"1 MATIC"}, {"donor":"0x..354", "time":"1 Day Ago", "amount":"58.2 MATIC"}, {"donor":"0x..259", "time":"5 Days Ago", "amount":"0.001 MATIC"}]} />
+        <RecentDonationsSection
+          donations={[
+            { donor: "0x..111", time: "5 Hours Ago", amount: "1 SOL" },
+            { donor: "0x..354", time: "1 Day Ago", amount: "30 SOL" },
+            { donor: "0x..259", time: "5 Days Ago", amount: "2 SOL" },
+          ]}
+        />
       </div>
     </Layout>
   );
@@ -75,14 +81,12 @@ const CampaignPage: React.FC<CampaignProps> = ({ campaign }) => {
 export async function getStaticPaths() {
   let campaigns;
 
-  // const response = await fetch('http://localhost:3000/api/campaigns', {
-  //   method: 'GET'
-  // });
+  const response = await fetch('http://localhost:3000/api/campaigns', {
+    method: 'GET'
+  });
 
-  // campaigns = await response.json();
-  // console.log("campaigns",campaigns)
-
-  campaigns = campaignsStub;
+  campaigns = await response.json();
+  console.log("campaigns",campaigns)
 
   for (let i = 0; i < campaigns.length; i++) {
     const campaign = campaigns[i];
@@ -102,15 +106,13 @@ export async function getStaticProps({ params }: { params: { slug: string } }) {
 
   let campaigns;
 
-  // const response = await fetch('http://localhost:3000/api/campaigns', {
-  //   method: 'GET'
-  // });
+  const response = await fetch('http://localhost:3000/api/campaigns', {
+    method: 'GET'
+  });
 
-  // campaigns = await response.json();
-  // console.log("campaigns",campaigns)
+  campaigns = await response.json();
+  console.log("campaigns",campaigns)
 
-  campaigns = campaignsStub;
-  
   const slug = params.slug;
   const campaign = campaigns.find(
     (campaign: Campaign) =>

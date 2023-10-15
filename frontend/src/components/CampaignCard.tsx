@@ -10,23 +10,23 @@ import {
 } from './ui/card';
 import { Progress } from './ui/progress';
 
-interface CharityCardProps {
+interface CampaignCardProps {
   title: string;
   description: string;
   currentAmount: number;
   targetAmount: number;
 }
 
-const CharityCard: React.FC<CharityCardProps> = ({
+const CampaignCard: React.FC<CampaignCardProps> = ({
   title,
   description,
   currentAmount,
   targetAmount,
 }) => {
   const progressValue = (currentAmount / targetAmount) * 100;
-  
+
   const router = useRouter(); // Initialize the useRouter hook
-  const slug = title.replace(/\s+/g, "-").toLowerCase()
+  const slug = title.replace(/\s+/g, "-").toLowerCase();
 
   const handleCardClick = () => {
     // Programmatically navigate to the donor page
@@ -54,4 +54,4 @@ const CharityCard: React.FC<CharityCardProps> = ({
   );
 };
 
-export default CharityCard;
+export default CampaignCard;

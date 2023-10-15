@@ -2,7 +2,6 @@
 import React from "react";
 import CommitmentCard from '@/components/CommitmentCard';
 
-
 interface CommitmentsSectionProps {
   commitment: Commitment[];
 }
