@@ -49,13 +49,35 @@ SolMatch has three key features:
 </ul>
 
 ## Walkthrough
-
+<p align='center'>
+<img src="Media/fe1.png"/>
+</p>
+<ul>
+    <li>A donor can connect their wallet to the front end</li>
+    <li>After conecting the wallet the user can select a specific campaign listed</li>
+</ul>
+<p align='center'>
+<img src="Media/fe2.png"/>
+</p>
+<ul>
+    <li>The donor can view the commitments specific by the campaign in terms of percentage of funds allocated to a specific supplier</li>
+    <li>The donor can also view recent donations from other users</li>
+    <li>The donor can choose to donate and send SOL to the campaign</li>
+</ul>
+<p align='center'>
+<img src="Media/solscan.JPG"/>
+</p>
+<ul>
+    <li>After the donation has been completed the donor can view the transaction on-chain</li>
+</ul>
 ## Setup and Installation
 
 1. git clone
 2. cd Codebase
 2. npm install -i
 3. npm run dev
+
+<i>The application interacts with the solana devnet so make sure you have enough devnet SOL!</i>
 
 ## Builders
 Do feel free to connect with us!
