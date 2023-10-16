@@ -32,6 +32,7 @@ SolMatch has three key features:
 <p align='center'>
 <img src="Media/userflow.png" width="1000" height="585"/>
 </p>
+
 1. Charity reaches out to the Team at SolMatch
 2. We create a donation contract for the Charity's campaign on Solana and list it on our website
 3. Donors can fund the campaign with SOL
