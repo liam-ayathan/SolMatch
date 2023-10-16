@@ -14,6 +14,7 @@ For a better understanding of the project, do check out our pitch deck [here](ht
 - [Technical Stack](#technical-stack)
 - [Walkthrough](#walkthrough)
 - [Setup and Installation](#setup-and-installation)
+- [Useful Resources](#useful-resources)
 - [BUILDERS](#builders)
 
 ## Problem and Solution
@@ -70,14 +71,21 @@ SolMatch has three key features:
 <ul>
     <li>After the donation has been completed the donor can view the transaction on-chain</li>
 </ul>
+
 ## Setup and Installation
 
 1. git clone
 2. cd Codebase
-2. npm install -i
-3. npm run dev
+3. npm install -i
+4. npm run dev
 
 <i>The application interacts with the solana devnet so make sure you have enough devnet SOL!</i>
+
+## Useful Resources
+
+1. [Phantom Developer Documentation](https://docs.phantom.app/introduction/readme)
+2. [Solana Web3 JS Documentation](https://docs.solana.com/developing/clients/javascript-api)
+3. [Solana Faucet](https://solfaucet.com/)
 
 ## Builders
 Do feel free to connect with us!
