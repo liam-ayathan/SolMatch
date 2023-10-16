@@ -5,7 +5,7 @@ Solmatch, a donation platform that utilizes blockchain technology for transparen
 For a better understanding of the project, do check out our pitch deck [here](https://www.canva.com/design/DAFxTcSyYbs/yFRElmTAPKkTgo583cFsEg/view?utm_content=DAFxTcSyYbs&utm_campaign=designshare) and the demo of our application [here](https://www.youtube.com/watch?v=Is8OEULcUW0)!
 
 <p align='center'>
-<img src="Media/SolMatch.mp4" width="1000" height="585"/>
+<img src="Media/solmatch.png" width="1000" height="585"/>
 </p>
 
 # Table of Contents
