@@ -11,6 +11,8 @@
   "dependencies": {
     "@rainbow-me/rainbowkit": "^1.1.1",
     "@solana/wallet-adapter-react": "^0.15.35",
+    "@solana/web3.js": "^1.87.1",
+    "bs58": "^5.0.0",
     "class-variance-authority": "^0.7.0",
     "dotenv": "^16.3.1",
     "ethers": "^6.7.1",

@@ -38,7 +38,6 @@ export default function Home({ campaigns }: ExploreCampaignsSegmentProps) {
   return (
     <Layout>
       <div className="relative w-full">
-        {/* Hero Image */}
         {/* <div
           className="bg-center bg-no-repeat h-[300px]"
           style={{ backgroundImage: 'url(/flowers.png)' }}
