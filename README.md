@@ -4,13 +4,6 @@ Solmatch, a donation platform that utilizes blockchain technology for transparen
 
 For a better understanding of the project, do check out our pitch deck [here](https://www.canva.com/design/DAFxTcSyYbs/yFRElmTAPKkTgo583cFsEg/view?utm_content=DAFxTcSyYbs&utm_campaign=designshare) and the demo of our application [here](https://www.youtube.com/watch?v=Is8OEULcUW0)!
 
-SolMatch has three key features: 
-<ul>
-    <li>Transparent Donations on Chain</li>
-    <li>Holding funds in escrow</li>
-    <li>Commitment fulfillment to whitelisted suppliers</li>
-</ul>
-
 # Table of Contents
 - [Problem and Solution](#problem-and-solution)
 - [Process Flow](#process-flow)
@@ -20,6 +13,13 @@ SolMatch has three key features:
 - [BUILDERS](#builders)
 
 ## Problem and Solution
+
+SolMatch has three key features: 
+<ul>
+    <li>Transparent Donations on Chain</li>
+    <li>Holding funds in escrow</li>
+    <li>Commitment fulfillment to whitelisted suppliers</li>
+</ul>
 
 ## Process Flow
 
