@@ -1,15 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Cookies from "js-cookie"; // Import the 'js-cookie' library
 
 const Navbar: React.FC = () => {
-  // web3
-  const [web3, setWeb3] = useState<any>(null); // Web3 instance
-  const [account, setAccount] = useState<string | null>(null); // User's Ethereum account
+  const [pubKey, setPubKey] = useState<string | boolean>(false);
 
-  // Dropdown state
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [pubKey, setPubKey] = useState<string | null>(null);
+  useEffect(() => {
+    const fetchCookies = async () => {
+      let initialPubKey = Cookies.get("public_key"); // doing this so that I can retain the session for this even when the page rebuilds
+      console.log(`the pubkey key is ${initialPubKey}`);
+      if (
+        initialPubKey === undefined ||
+        initialPubKey === "null" ||
+        initialPubKey === null ||
+        initialPubKey === "false"
+      ) {
+        setPubKey(false);
+        console.log("if executed");
+      } else {
+        setPubKey(initialPubKey);
+        console.log("else executed");
+      }
+    };
+    fetchCookies();
+  }, []);
 
   const getProvider = (isConnected: boolean) => {
     if ("phantom" in window) {
@@ -33,10 +48,11 @@ const Navbar: React.FC = () => {
   const establishConnection = async () => {
     const provider = getProvider(true); // see "Detecting the Provider", adding in true for connected
     try {
-      const resp = await provider.connect({ onlyIfTrusted: true });
+      const resp = await provider.connect();
       console.log(`I connected my wallet ${resp.publicKey.toString()}`);
       // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo
       console.log(provider.isConnected);
+      Cookies.set("public_key", resp.publicKey.toString());
       setPubKey(resp.publicKey.toString());
     } catch (err) {
       // { code: 4001, message: 'User rejected the request.' }
@@ -51,7 +67,8 @@ const Navbar: React.FC = () => {
       console.log(`I disconnected my wallet`);
       // 26qv4GCcx98RihuK3c4T6ozB3J7L6VwCuFVc7Ta2A3Uo
       console.log(provider.isConnected);
-      setPubKey(null);
+      Cookies.set("public_key", false);
+      setPubKey(false);
     } catch (err) {
       // { code: 4001, message: 'User rejected the request.' }
       console.log(err);
@@ -64,7 +81,7 @@ const Navbar: React.FC = () => {
         <Link href="/">Solmatch</Link>
       </div>
       <div className="flex space-x-2">
-        {pubKey ? (
+        {pubKey !== false ? (
           <div className="relative">
             <Button variant="outline">
               Connected: {pubKey.substring(0, 5)}...
