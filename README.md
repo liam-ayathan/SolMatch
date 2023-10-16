@@ -5,7 +5,7 @@ Solmatch, a donation platform that utilizes blockchain technology for transparen
 For a better understanding of the project, do check out our pitch deck [here](https://www.canva.com/design/DAFxTcSyYbs/yFRElmTAPKkTgo583cFsEg/view?utm_content=DAFxTcSyYbs&utm_campaign=designshare) and the demo of our application [here](https://www.youtube.com/watch?v=Is8OEULcUW0)!
 
 <p align='center'>
-<img src="Media/solmatch.png" width="1000" height="520"/>
+<img src="Media/solmatch.png"/>
 </p>
 
 # Table of Contents
@@ -30,7 +30,7 @@ SolMatch has three key features:
 
 ## Process Flow
 <p align='center'>
-<img src="Media/userflow.png" width="1000" height="520"/>
+<img src="Media/userflow.png"/>
 </p>
 
 1. Charity reaches out to the Team at SolMatch
@@ -41,7 +41,7 @@ SolMatch has three key features:
 
 ## Technical Stack
 <p align='center'>
-<img src="Media/techstack.png" width="1000" height="520"/>
+<img src="Media/techstack.png"/>
 </p>
 <ul>
     <li>The front end of our application was built using Next.js</li>
